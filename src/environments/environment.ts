@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyB002je7bHqZf7DE9WjtthFLJ2ozS3U9uM",
+    authDomain: "posonline-b7e75.firebaseapp.com",
+    databaseURL: "https://posonline-b7e75.firebaseio.com",
+    projectId: "posonline-b7e75",
+    storageBucket: "posonline-b7e75.appspot.com",
+    messagingSenderId: "1006466832419",
+    appId: "1:1006466832419:web:2190a332aa2be9e6"
+  }
 };
 
 /*

@@ -1,0 +1,40 @@
+<div class="login-container">
+  <form class="login-form">
+    <p>{{message}}</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Email or phone</mat-label>
+      <input matInput [formControl]="email" placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-error *ngIf="email.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <input [type]="hide?'password':'text'" matInput placeholder="Password" [formControl]="password">
+
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="password.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput [formControl]="email" placeholder="Placeholder">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-error *ngIf="password.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field> -->
+    <br />
+    <button (click)="onLogIn()" mat-button>Sign in</button>
+  </form>
+
+</div>
